@@ -35,6 +35,8 @@ build/Release
 # Dependency directories
 # build
 node_modules/
+ucf-publish/
+
 old
 jspm_packages/
 
