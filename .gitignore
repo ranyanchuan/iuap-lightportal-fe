@@ -36,7 +36,8 @@ build/Release
 # build
 node_modules/
 ucf-publish/
-
+.cache
+.DS_Store
 old
 jspm_packages/
 
