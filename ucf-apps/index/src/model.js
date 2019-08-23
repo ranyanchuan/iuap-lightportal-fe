@@ -154,7 +154,7 @@ export default {
           //if(isLightPortal === 'wbalone') {
             themeObj = getWbaloneTheme();
           // }else{
-          //   themeObj = getLightPortalTheme(); 
+          //   themeObj = getLightPortalTheme();
           // }
           // 对参数进行公共处理
 
@@ -178,11 +178,11 @@ export default {
             themeObj.headerBgColor = themeObj.headerBgColor || '#242D48';
           }else if(themeObj.headerTheme === 'light'){
             if(getLocal === 'zh_CN') {
-              themeObj.headerCenterImg0 = themeObj.headerCenterImg0 || require(`../../../ucf-common/src/static/images/logo_${getLocal}.svg`);
+              themeObj.headerCenterImg0 = themeObj.headerCenterImg0 || require(`../../../ucf-common/src/static/images/logo_zh_CN.png`);
             } else if (getLocal === 'en_US') {
-              themeObj.headerCenterImg1 = themeObj.headerCenterImg1 || require(`../../../ucf-common/src/static/images/logo_${getLocal}.svg`);
+              themeObj.headerCenterImg1 = themeObj.headerCenterImg1 || require(`../../../ucf-common/src/static/images/logo_zh_CN.png`);
             } else {
-              themeObj.headerCenterImg2 = themeObj.headerCenterImg2 || require(`../../../ucf-common/src/static/images/logo_${getLocal}.svg`);
+              themeObj.headerCenterImg2 = themeObj.headerCenterImg2 || require(`../../../ucf-common/src/static/images/logo_zh_CN.png`);
             }
             if(!themeObj.headerBgImg && !themeObj.headerBgColor) {
               themeObj.headerBgImg = '/wbalone/images/index/bg_topbar.jpg';

@@ -69,6 +69,8 @@ class UserMenus extends Component {
 
     render() {
 
+        console.log("userMenus",this.state.userMenus)
+
         var self = this;
         let {intl} = this.props;
         let locale_serial = getCookie("locale_serial");
@@ -79,7 +81,7 @@ class UserMenus extends Component {
         let h = GROBAL_PORTAL_CTX === '/wbalone'?`${GROBAL_PORTAL_CTX}/user/beflogout`:`${GROBAL_PORTAL_CTX}/user/logout`;
         return (
             <div mode="horizontal" className="dropdown header-right-dropdown" style={{ width: '100%' }}>
-                {<div className="header-right-info">
+                <div className="header-right-info">
                     <div role="button" id="username"  aria-expanded="false" data-toggle="dropdown" className="navbar-avatar dropdown-toggle">
                         <span className="avatar-name"> {decodeURIComponent(decodeURIComponent(cookie.load('_A_P_userName')))} </span>
                         <span className="header-right-icon"><i className="uf uf-treearrow-down"></i></span>
@@ -87,9 +89,9 @@ class UserMenus extends Component {
                           <img src={decodeURIComponent(decodeURIComponent(decodeURIComponent(cookie.load('loginChannel')=='yht'?'%252Fwbalone%252Fimages%252Fdot.png': cookie.load('_A_P_userAvator'))))} />
                         </span>
                     </div>
-                </div>}
+                </div>
                 <div className="header-right-applet-content">
-                  <div className="header-right-applet-list" style={{display: portalId === 'wbalone'? '':'none' }}>
+                  <div className="header-right-applet-list">
                     {
                       this.state.userMenus.map(function(item) {
                         return (

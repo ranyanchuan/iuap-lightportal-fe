@@ -436,7 +436,7 @@ class App extends Component {
             menu:menu
         })
 
-        
+
     }
     render() {
         return (
@@ -466,19 +466,27 @@ class App extends Component {
             handleClick: self.handleClick,
             collectefunc: self.collectefunc
         }
-        if(treeType === 1 || treeType === "1"){
-            //3级菜单顶部浮动导航
-            return <ConnectedTopSideBar sideBarOper={sideBarOper}/>
-        }else if(treeType === 4 ||  treeType === "4"){
-            //4级菜单左侧抽屉固定导航
-            return <ConnectedMenus sideBarOper={sideBarOper}/>
-        }else if(treeType === 3 ||  treeType === "3"){
-            //3级菜单左侧固定导航
-            return <ConnectedLeftSideBar sideBarOper={sideBarOper}/>
-        }else{
-             // 4级菜单顶部浮动导航
-            return <ConnectedTopMoreSideBar sideBarOper={sideBarOper}/>
-        }
+
+        console.log("treeType",treeType)
+
+        return <ConnectedTopSideBar sideBarOper={sideBarOper}/>
+        // return <ConnectedMenus sideBarOper={sideBarOper}/>
+        // return <ConnectedLeftSideBar sideBarOper={sideBarOper}/>
+        // return <ConnectedTopMoreSideBar sideBarOper={sideBarOper}/>
+
+        // if(treeType === 1 || treeType === "1"){
+        //     //3级菜单顶部浮动导航
+        //     return <ConnectedTopSideBar sideBarOper={sideBarOper}/>
+        // }else if(treeType === 4 ||  treeType === "4"){
+        //     //4级菜单左侧抽屉固定导航
+        //     return <ConnectedMenus sideBarOper={sideBarOper}/>
+        // }else if(treeType === 3 ||  treeType === "3"){
+        //     //3级菜单左侧固定导航
+        //     return <ConnectedLeftSideBar sideBarOper={sideBarOper}/>
+        // }else{
+        //      // 4级菜单顶部浮动导航
+        //     return <ConnectedTopMoreSideBar sideBarOper={sideBarOper}/>
+        // }
     }
 }
 

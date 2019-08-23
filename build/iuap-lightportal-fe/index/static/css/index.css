@@ -715,24 +715,24 @@ body{
 	width: 144px;
 }
 .portal-logo {
-	width: 127px;
+	width: 400px;
 	height:32px;
 	transition: all 0.2s linear;
 }
 .portal-logo.zh_CN{
-	background-image: url("../images/logo_zh_CN.svg");
+	background-image: url("../images/logo_zh_CN.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
 .portal-logo.en_US{
-	background-image: url("../images/logo_en_US.svg");
+	background-image: url("../images/logo_zh_CN.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
 .portal-logo.zh_TW{
-	background-image: url("../images/logo_zh_TW.svg");
+	background-image: url("../images/logo_zh_CN.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }

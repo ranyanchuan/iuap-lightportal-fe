@@ -9,6 +9,7 @@ class HeaderCenter extends Component {
     }
     render() {
       let {themeObj} = this.props;
+      // let bgImg = `url(${themeObj.headerCenterImg})`
       let bgImg = `url(${themeObj.headerCenterImg})`
       let className = 'portal-logo';
       if(contextId === 'mdm'){
@@ -18,7 +19,7 @@ class HeaderCenter extends Component {
         return (
             <div className="header-center">
               <a href="javascript:;">
-                <div className={className} style={{backgroundImage:bgImg ,backgroundSize:'100% 100%',backgroundRepeat:'no-repeat'}}></div>
+                <div className={className} style={{backgroundImage:bgImg ,height:'60px',backgroundRepeat:'no-repeat'}}></div>
                 {/* <img src={a } className="portal-logo" /> */}
               </a>
             </div>

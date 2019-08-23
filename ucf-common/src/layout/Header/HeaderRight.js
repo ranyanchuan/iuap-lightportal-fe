@@ -96,15 +96,15 @@ class HeaderRight extends Component {
                     <Option value="0">中兴</Option>
                   </Select>
                 */}
-                {
-                  <Select
-                    defaultValue={langCode}
-                    style={{ marginRight: 6 , width: 80, display: langDisplay}}
-                    onChange={this.handleChange}
-                  >
-                    {this.initOption("lang",langList)}
-                  </Select>
-                }
+                {/*{*/}
+                  {/*<Select*/}
+                    {/*defaultValue={langCode}*/}
+                    {/*style={{ marginRight: 6 , width: 80, display: langDisplay}}*/}
+                    {/*onChange={this.handleChange}*/}
+                  {/*>*/}
+                    {/*{this.initOption("lang",langList)}*/}
+                  {/*</Select>*/}
+                {/*}*/}
                 {!maxed ?
                   <a id="maxBox" onClick={(e)=>self.maxfunc(e)}   data-ref="taskcenter" name={intl.formatMessage({id: 'tabs.header.max'})} title={intl.formatMessage({id: 'tabs.header.max'})}  className="navbar-avatar" titlekey={intl.formatMessage({id: 'tabs.header.max'})} >
                     <Icon type="uf-maxmize" style={{"fontSize":"18px"}}></Icon>

@@ -159,7 +159,7 @@ class App extends Component {
                 password = RSAUtils.encryptedString(DEdata);
             }
             data.password = password;
- 
+
             if(this.props.codeVerfiy){
                 let verfiyCode = this.refs.verfiyInput.value;
                 data.verifyCode = verfiyCode;
@@ -406,7 +406,7 @@ class App extends Component {
             let errMsg = this.props.intl.formatMessage({id: 'js.pag.for.0013',defaultMessage:"邮箱输入错误"})
             if(step2MsgType === 'phone'){
                 errMsg = this.props.intl.formatMessage({id: 'js.pag.for.0010',defaultMessage:"手机号码输入错误"})
-                
+
             }
             actions.app.updateState({
                 forgetpswErrMsg: errMsg
@@ -437,9 +437,9 @@ class App extends Component {
             </Steps>
         )
     }
-    
+
     render() {
-        let {langCode,langList,verfiyImg,errMsg,codeVerfiy,checked,username,password,forgetpswErrMsg,sendSMSDisable,forgetpswVerfiyImg,forgetstep,forgetpsw,step2MsgType,step2Phone,step1User,step2Wait,confirmShow,confirmMsg,resetpwdDisabled,resetpsw,reststep,resetpswErrMsg,resetpswTitle} = this.props; 
+        let {langCode,langList,verfiyImg,errMsg,codeVerfiy,checked,username,password,forgetpswErrMsg,sendSMSDisable,forgetpswVerfiyImg,forgetstep,forgetpsw,step2MsgType,step2Phone,step1User,step2Wait,confirmShow,confirmMsg,resetpwdDisabled,resetpsw,reststep,resetpswErrMsg,resetpswTitle} = this.props;
         if(langCode != getCookie('u_locale')){
             langCode = getCookie('u_locale')
             actions.app.updateState({
@@ -465,21 +465,21 @@ class App extends Component {
             <div className="login-main">
                 <div className="login-top">
                     <div className="login-logo">
-                        <div className={logImg}></div>                                          
+                        <div className={logImg}></div>
                     </div>
-                    <div className="login-lang" style={{
-                        display: langDisplay
-                    }}>
-                        <Select id="busicenter" onSelect={this.onSelect} defaultValue={langCode} className="langcode">
-                            {this.initOption("lang",langList)}
-                        </Select>
-                    </div>
+                    {/*<div className="login-lang" style={{*/}
+                        {/*display: langDisplay*/}
+                    {/*}}>*/}
+                        {/*<Select id="busicenter" onSelect={this.onSelect} defaultValue={langCode} className="langcode">*/}
+                            {/*{this.initOption("lang",langList)}*/}
+                        {/*</Select>*/}
+                    {/*</div>*/}
                 </div>
                 <div className="login-content">
                     <div className="content-left"></div>
                     <div className="content-center">
                         {/* <img src={require(`static/images/login-center_${langCode}.png`)}/> */}
-                    </div>    
+                    </div>
                     <div className="content-right">
                         <div className="login-panel-out">
                             <div  className="login-panel" style={{paddingTop:m_top,paddingBottom:m_bottom}}>
@@ -498,7 +498,7 @@ class App extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>                
+                    </div>
                 </div>
                 <div className="login-bottom">{this.props.intl.formatMessage({id: 'ht.pag.log1.0022',defaultMessage:"版权所有"})} &#169;2007-2019{this.props.intl.formatMessage({id: 'ht.pag.log1.0021',defaultMessage:"ht.pag.log1.0021"})}</div>
                 <LoginModal visible={forgetpsw}  step={forgetstep} className={langCode === 'en_US'? 'modal-en': ''}>
@@ -516,19 +516,19 @@ class App extends Component {
                                 <div className="psw-p-input">
                                     <div>
                                         <input className="u-form-control text" id="psdUser" ref="psdUser" type="text" defaultValue={step1User} placeholder={this.props.intl.formatMessage({id: 'ht.pag.for.0009',defaultMessage:"用户名/邮箱/手机号"})}/>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
                             <div className="psw-p">
                                 <div className="psw-p-label">{this.props.intl.formatMessage({id: 'ht.pag.for.0010',defaultMessage:"图片验证码"})}</div>
                                 <div className="psw-p-input">
                                     <div>
-                                        <input className="u-form-control text" defaultValue='' id="psdVerfiy" ref="psdVerfiy" type="text" placeholder={this.props.intl.formatMessage({id: 'ht.pag.for.0011',defaultMessage:"输入右侧图片字母或数字"})}/>   
+                                        <input className="u-form-control text" defaultValue='' id="psdVerfiy" ref="psdVerfiy" type="text" placeholder={this.props.intl.formatMessage({id: 'ht.pag.for.0011',defaultMessage:"输入右侧图片字母或数字"})}/>
                                     </div>
                                 </div>
                                 <img onClick={this.forgetpswRandImg} id="randImg" src={forgetpswVerfiyImg}/>
                             </div>
-                            <div className="psw-error-msg" id="psw-error-msg">{forgetpswErrMsg}</div>   
+                            <div className="psw-error-msg" id="psw-error-msg">{forgetpswErrMsg}</div>
                         </LoginModal.Content>
                         <LoginModal.Foot>
                             <Button className="modalOK" onClick={this.toForgetPswNext}>{this.props.intl.formatMessage({id: 'ht.pag.for.0012',defaultMessage:"下一步"})}</Button>
@@ -557,7 +557,7 @@ class App extends Component {
                                     <input className="u-form-control text"  id="step2PsdVerfiy" ref="step2PsdVerfiy" type="text" placeholder={this.props.intl.formatMessage({id: 'ht.pag.for.0017',defaultMessage:"输入6位验证码"})}/>
                                 </div>
                             </div>
-                            <div className="psw-error-msg" id="psw-error-msg">{forgetpswErrMsg}</div>   
+                            <div className="psw-error-msg" id="psw-error-msg">{forgetpswErrMsg}</div>
                         </LoginModal.Content>
                         <LoginModal.Foot>
                             <Button className="modalOK" disabled={sendSMSDisable} onClick={this.toForgetPswNext}>{this.props.intl.formatMessage({id: 'ht.pag.for.0012',defaultMessage:"下一步"})}</Button>
@@ -590,7 +590,7 @@ class App extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="psw-error-msg" id="psw-error-msg">{forgetpswErrMsg}</div>   
+                            <div className="psw-error-msg" id="psw-error-msg">{forgetpswErrMsg}</div>
                         </LoginModal.Content>
                         <LoginModal.Foot>
                             <Button className="modalOK" onClick={this.toForgetPswNext}>{this.props.intl.formatMessage({id: 'ht.pag.for.0012',defaultMessage:"下一步"})}</Button>
@@ -611,7 +611,7 @@ class App extends Component {
                             <div className="psw-forget2">{'3' + this.props.intl.formatMessage({id: 'ht.pag.for.0026',defaultMessage:"后自动关闭"})}</div>
                         </LoginModal.Content>
                     </div>
-                    
+
                 </LoginModal>
                 <LoginModal visible={resetpsw}  step={reststep} className={langCode === 'en_US'? ' modal-en reset-modal': ' reset-modal'}>
                     <div className="login-tabs step5">
@@ -636,7 +636,7 @@ class App extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="psw-error-msg" id="psw-error-msg">{resetpswErrMsg}</div>   
+                            <div className="psw-error-msg" id="psw-error-msg">{resetpswErrMsg}</div>
                         </LoginModal.Content>
                         <LoginModal.Foot>
                             <Button disabled={resetpwdDisabled} className="modalOK" onClick={this.resetpswConfirm}>{this.props.intl.formatMessage({id: 'ht.pag.log1.0020',defaultMessage:"确定"})}</Button>
